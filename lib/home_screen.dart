@@ -35,6 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
             canvasColor: MyTheme.primaryLightColor
             ),
           child: BottomNavigationBar(
+            unselectedItemColor: Colors.white,
+            showUnselectedLabels: true,
+            selectedItemColor: Colors.black,
             items: [
               BottomNavigationBarItem(icon: Image.asset('assets/images/quran.png'),
               label: 'Quran'),
