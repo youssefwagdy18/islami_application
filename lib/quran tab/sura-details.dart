@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SuraDetails extends StatelessWidget {
-  String content;
-  int index;
-  SuraDetails({super.key, required this.content,required this.index});
+  final String content;
+  final int index;
+  const SuraDetails({super.key, required this.content,required this.index});
 
   @override
   Widget build(BuildContext context) {
