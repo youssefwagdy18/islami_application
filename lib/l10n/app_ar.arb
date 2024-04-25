@@ -1,0 +1,16 @@
+{
+"app_title" : "اسلامى",
+  "quran_tab": "قران",
+  "sebha_tab": "سبحه",
+  "radio_tab": "الاذاعه",
+  "hadeth_tab": "الحديث",
+  "sura_name": "اسم السوره",
+  "hadeth_name": "اسم الحديث",
+  "settings_tab": "الاعدادات",
+  "language": "اللغه",
+  "theme_mode": "الوضع",
+  "english": "الانجليزيه",
+  "arabic": "العربيه",
+  "light_mode": "وضع النهار",
+  "dark_mode": "وضع الليل"
+}
