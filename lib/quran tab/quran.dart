@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/my_theme.dart';
 import 'package:islami/quran%20tab/item-sura-name.dart';
-import 'package:islami/quran%20tab/sura_content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
    static List <String> suraName=["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
@@ -16,6 +15,8 @@ class QuranTab extends StatelessWidget {
   ,"التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر",
   "الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
 
+  const QuranTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -26,7 +27,7 @@ class QuranTab extends StatelessWidget {
             color: MyTheme.primaryLightColor,
             thickness: 2,
           ),
-          Text('Sura Name',style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.sura_name,style: Theme.of(context).textTheme.titleMedium),
           Divider(
             color: MyTheme.primaryLightColor,
             thickness: 2,

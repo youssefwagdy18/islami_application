@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/my_theme.dart';
-import 'package:islami/quran%20tab/sura-details.dart';
+import 'package:islami/providers/app_config_provider.dart';
+import 'package:islami/quran%20tab/sura_details.dart';
+import 'package:provider/provider.dart';
+import 'package:islami/providers/app_config_provider.dart';
 
 class SuraContent extends StatefulWidget {
 static const String routename ='sura-content';
@@ -17,16 +20,22 @@ List<String>showLines =[];
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
     if(showLines.isEmpty){
       loadFile(args.index);
     }
     return Stack(
       children: [
+        provider.appTheme == ThemeMode.light?
       Image.asset('assets/images/background.png',
       width: double.infinity,
       height: double.infinity,
-      fit: BoxFit.fill,),
+      fit: BoxFit.fill,) :
+        Image.asset('assets/images/background_dark.png',
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fill,),
     Scaffold(
     appBar: AppBar(
     title: Text(args.name,
@@ -39,7 +48,9 @@ List<String>showLines =[];
       ListView.builder(itemBuilder: (context , index){
         return Container(
           decoration: BoxDecoration(
-            color: MyTheme.whiteColorWithOpacity,
+            color: provider.appTheme == ThemeMode.light?
+            MyTheme.whiteColorWithOpacity :
+            MyTheme.primaryDarkColor,
               borderRadius: BorderRadius.circular(30)
             ),
         margin: EdgeInsets.symmetric(
