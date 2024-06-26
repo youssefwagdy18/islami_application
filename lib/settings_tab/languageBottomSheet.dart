@@ -15,7 +15,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   Widget build(BuildContext context) {
     var provider=Provider.of<AppConfigProvider>(context);
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       color: provider.appTheme==ThemeMode.light?
       MyTheme.whiteColor:
       MyTheme.primaryDarkColor,
@@ -23,14 +23,14 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
             onTap: (){
-              provider.ChangeLanguage('en');
+              provider.changeLanguage('en');
             },child: provider.appLanguage=='en'?
           onSelectedItem(AppLocalizations.of(context)!.english):
           onUnSelectedItem(AppLocalizations.of(context)!.english)
           ),
           InkWell(
             onTap: (){
-              provider.ChangeLanguage('ar');
+              provider.changeLanguage('ar');
             },child: provider.appLanguage=='ar'?
           onSelectedItem(AppLocalizations.of(context)!.arabic):
           onUnSelectedItem(AppLocalizations.of(context)!.arabic)
